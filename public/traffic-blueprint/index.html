@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get The 7-Day Traffic Machine Blueprint — Greg Sain</title>
+    <meta name="description" content="Free blueprint: How to build a traffic system that brings leads while you sleep. No ads required.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Matrix background effect */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 25px,
+                #00FF41 25px,
+                #00FF41 26px
+            );
+            pointer-events: none;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo a {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo a span {
+            color: #00FF41;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #00FF41;
+            color: #000;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 11px;
+            padding: 8px 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+        
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        h1 span {
+            color: #00FF41;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #888;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        
+        /* Form */
+        .form-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #00FF41;
+        }
+        
+        .form-group input::placeholder {
+            color: #666;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: #00FF41;
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.3);
+        }
+        
+        .privacy-note {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-top: 15px;
+        }
+        
+        /* What's Inside */
+        .inside-section {
+            margin-bottom: 40px;
+        }
+        
+        .inside-section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .inside-section h2 span {
+            color: #00FF41;
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        
+        .check-icon {
+            color: #00FF41;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .social-proof p {
+            font-size: 15px;
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 12px;
+        }
+        
+        .social-proof .author {
+            font-size: 13px;
+            color: #888;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer p {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .footer a {
+            color: #00FF41;
+            text-decoration: none;
+        }
+        
+        /* Success message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .success-message h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .success-message h2 span {
+            color: #00FF41;
+        }
+        
+        .success-message p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .success-message .next-steps {
+            background: rgba(0, 255, 65, 0.1);
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: left;
+        }
+        
+        .success-message .next-steps h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #00FF41;
+        }
+        
+        .success-message .next-steps ol {
+            margin-left: 20px;
+            color: #ccc;
+        }
+        
+        .success-message .next-steps li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .form-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    <div class="content">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="https://gregsain.com">THE <span>KINGSTON</span> AGENCY</a>
+            </div>
+            
+            <!-- Main Form View -->
+            <div id="formView">
+                <!-- Hero -->
+                <div class="hero">
+                    <div class="badge">FREE BLUEPRINT</div>
+                    <h1>Stop Hoping For Traffic.<br><span>Build The Machine.</span></h1>
+                    <p class="subtitle">Get the 7-day blueprint that shows you how to build a traffic system that brings leads while you sleep — without spending a dime on ads.</p>
+                </div>
+                
+                <!-- Form -->
+                <div class="form-card">
+                    <form id="leadForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="email">Your Best Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="you@company.com" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Greg">
+                        </div>
+                        <button type="submit" class="submit-btn">SEND ME THE BLUEPRINT →</button>
+                    </form>
+                    <p class="privacy-note">No spam. Unsubscribe anytime. Your email is safe with me.</p>
+                </div>
+                
+                <!-- What's Inside -->
+                <div class="inside-section">
+                    <h2>Here's What You'll <span>Get:</span></h2>
+                    <ul class="checklist">
+                        <li><span class="check-icon">✓</span> The exact 30-minute daily routine that compounds over time</li>
+                        <li><span class="check-icon">✓</span> The lead magnet formula that converts at 30-40%</li>
+                        <li><span class="check-icon">✓</span> The 5-email welcome sequence template (copy-paste ready)</li>
+                        <li><span class="check-icon">✓</span> Where to post for maximum reach (and where not to waste time)</li>
+                        <li><span class="check-icon">✓</span> The content repurposing system: 1 piece = 5 pieces</li>
+                        <li><span class="check-icon">✓</span> Partnership strategies that 10x your reach overnight</li>
+                    </ul>
+                </div>
+                
+                <!-- Social Proof -->
+                <div class="social-proof">
+                    <p>"Greg built me a traffic system that runs on autopilot. I went from 2 leads a week to 15. Best investment I made this year."</p>
+                    <p class="author">— Business Owner, Minneapolis</p>
+                </div>
+            </div>
+            
+            <!-- Success View -->
+            <div id="successView" class="success-message">
+                <h2>Blueprint <span>Incoming!</span> 🚀</h2>
+                <p>Check your inbox in the next 2 minutes. I'm sending you the full 7-Day Traffic Machine Blueprint plus a bonus quick-start guide.</p>
+                <div class="next-steps">
+                    <h3>WHILE YOU WAIT:</h3>
+                    <ol>
+                        <li>Whitelist <strong>kingston_ceo@agentmail.to</strong> so it doesn't hit spam</li>
+                        <li>Join my daily insights on <a href="https://www.linkedin.com/in/gregsain/" target="_blank" style="color: #00FF41;">LinkedIn</a></li>
+                        <li>Want me to build this FOR you? <a href="https://tidycal.com/fulcrumgroup/tka" style="color: #00FF41;">Book a free 15-min call</a></li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <p>Built by <a href="https://gregsain.com">Greg Sain</a> | The Kingston Agency</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const firstName = document.getElementById('firstName').value;
+            const submitBtn = document.querySelector('.submit-btn');
+            
+            // Show loading state
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Send to API
+                const response = await fetch('https://gregsain.com/api/traffic-subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: firstName || '',
+                        email: email
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Show success view
+                    document.getElementById('formView').style.display = 'none';
+                    document.getElementById('successView').style.display = 'block';
+                    window.scrollTo(0, 0);
+                } else {
+                    throw new Error(result.error || 'Failed to send');
+                }
+            } catch (error) {
+                console.error('Submit error:', error);
+                submitBtn.textContent = 'SEND ME THE BLUEPRINT →';
+                submitBtn.disabled = false;
+                alert('Error: ' + error.message + '\n\nPlease try again or email kingston_ceo@agentmail.to');
+            }
+        }
+    </script>
+</body>
+</html>

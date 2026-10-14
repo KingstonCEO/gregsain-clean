@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>ShiftAI - The Founders Club | AI That Pays You</title>
+ <meta name="description" content="Join The Founders Club. Exclusive people, extraordinary opportunities. Global innovation meets premium lifestyle. Las Vegas launch January 1st, 2027." />
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+ <style>
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+ body {
+ font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+ color: #fff;
+ overflow-x: hidden;
+ background: linear-gradient(135deg, #0a0a1a 0%, #000428 50%, #000000 100%);
+ }
+
+ #matrix-bg {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 0;
+ background: linear-gradient(135deg, #0a0a1a 0%, #000428 50%, #000000 100%);
+ }
+
+ .content {
+ position: relative;
+ z-index: 1;
+ }
+
+ .container {
+ width: min(900px, calc(100% - 40px));
+ margin: 0 auto;
+ padding: 20px 0;
+ }
+
+ .header {
+ text-align: center;
+ margin-bottom: 30px;
+ }
+
+ .logo {
+ font-size: clamp(2.5rem, 5vw, 4rem);
+ font-weight: 900;
+ line-height: 1;
+ letter-spacing: -0.02em;
+ margin-bottom: 10px;
+ background: linear-gradient(90deg, #00D9FF, #00BFFF);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ text-transform: uppercase;
+ text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+ }
+
+ .tagline {
+ font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+ color: #00D9FF;
+ margin-bottom: 8px;
+ font-weight: 700;
+ line-height: 1.2;
+ text-transform: uppercase;
+ text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+ }
+
+ .subtagline {
+ font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+ color: #00BFFF;
+ font-weight: 400;
+ margin-bottom: 20px;
+ line-height: 1.4;
+ }
+
+ .card {
+ background: rgba(10, 10, 26, 0.8);
+ backdrop-filter: blur(10px);
+ border-radius: 20px;
+ padding: 30px;
+ box-shadow: 0 0 40px rgba(0, 191, 255, 0.3);
+ border: 1px solid rgba(0, 191, 255, 0.6);
+ margin-bottom: 20px;
+ }
+
+ .hero-image {
+ width: 100%;
+ border-radius: 12px;
+ margin-bottom: 25px;
+ border: 2px solid rgba(0, 191, 255, 0.5);
+ box-shadow: 0 0 40px rgba(0, 191, 255, 0.4);
+ }
+
+ .video-container {
+ position: relative;
+ width: 100%;
+ padding-bottom: 56.25%;
+ height: 0;
+ overflow: hidden;
+ border-radius: 12px;
+ margin-bottom: 25px;
+ border: 3px solid #9370DB;
+ box-shadow: 0 10px 40px rgba(147, 112, 219, 0.4);
+ background: rgba(147, 112, 219, 0.1);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+
+ .video-container iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ }
+
+ .features {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 15px;
+ margin: 25px 0;
+ }
+
+ .feature {
+ text-align: center;
+ padding: 15px;
+ background: rgba(10, 10, 40, 0.5);
+ border-radius: 10px;
+ border: 1px solid rgba(0, 191, 255, 0.4);
+ box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+ transition: all 0.3s ease;
+ }
+
+ .feature:hover {
+ border-color: rgba(0, 191, 255, 0.8);
+ box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+ transform: translateY(-2px);
+ }
+
+ .feature-icon {
+ font-size: 1.8rem;
+ margin-bottom: 8px;
+ }
+
+ .feature-text {
+ font-size: 0.75rem;
+ color: #00D9FF;
+ font-weight: 600;
+ text-transform: uppercase;
+ line-height: 1.2;
+ text-shadow: 0 0 5px rgba(0, 217, 255, 0.3);
+ }
+
+ .cta-section {
+ text-align: center;
+ margin: 30px 0;
+ }
+
+ .cta-headline {
+ font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+ color: #00D9FF;
+ font-weight: 900;
+ margin-bottom: 15px;
+ line-height: 1.2;
+ text-transform: uppercase;
+ text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+ }
+
+ .form-group {
+ margin-bottom: 15px;
+ }
+
+ .form-group input {
+ width: 100%;
+ padding: 15px 20px;
+ font-size: 1rem;
+ border: 1px solid rgba(0, 191, 255, 0.3);
+ border-radius: 10px;
+ background: rgba(10, 10, 40, 0.6);
+ color: #fff;
+ font-family: 'Orbitron', sans-serif;
+ transition: all 0.3s ease;
+ }
+
+ .form-group input:focus {
+ outline: none;
+ border-color: #FF1493;
+ box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+ }
+
+ .form-group input::placeholder {
+ color: #666;
+ }
+
+ .submit-btn {
+ width: 100%;
+ padding: 18px 20px;
+ font-size: 1.2rem;
+ font-weight: 900;
+ color: #fff;
+ background: linear-gradient(90deg, #00BFFF, #0088CC);
+ border: none;
+ border-radius: 10px;
+ cursor: pointer;
+ font-family: 'Orbitron', sans-serif;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ transition: all 0.3s ease;
+ box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+ }
+
+ .submit-btn:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 0 45px rgba(0, 191, 255, 0.7);
+ }
+
+ .submit-btn:active {
+ transform: translateY(0);
+ }
+
+ .launch-info {
+ text-align: center;
+ margin: 25px 0;
+ padding: 20px;
+ background: rgba(10, 10, 40, 0.5);
+ border-radius: 10px;
+ border: 1px solid rgba(0, 191, 255, 0.4);
+ box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+ }
+
+ .launch-date {
+ font-size: clamp(1.5rem, 3vw, 2rem);
+ color: #00D9FF;
+ font-weight: 900;
+ margin-bottom: 5px;
+ text-transform: uppercase;
+ text-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+ }
+
+ .launch-location {
+ font-size: clamp(1rem, 2vw, 1.3rem);
+ color: #00D9FF;
+ font-weight: 700;
+ text-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
+ }
+
+ .success-message {
+ display: none;
+ background: rgba(10, 10, 40, 0.7);
+ border: 1px solid rgba(0, 191, 255, 0.5);
+ border-radius: 10px;
+ padding: 20px;
+ text-align: center;
+ margin-top: 20px;
+ box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+ }
+
+ .success-message.show {
+ display: block;
+ }
+
+ .success-title {
+ font-size: 1.5rem;
+ color: #00D9FF;
+ font-weight: 900;
+ margin-bottom: 10px;
+ text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+ }
+
+ .success-text {
+ font-size: 1rem;
+ color: #fff;
+ line-height: 1.5;
+ }
+
+ .qr-section {
+ text-align: center;
+ margin: 30px 0;
+ padding: 25px;
+ background: rgba(10, 10, 40, 0.5);
+ border-radius: 15px;
+ border: 1px solid rgba(147, 112, 219, 0.5);
+ box-shadow: 0 0 20px rgba(147, 112, 219, 0.2);
+ }
+
+ .qr-title {
+ font-size: 1.3rem;
+ color: #00D9FF;
+ font-weight: 900;
+ margin-bottom: 15px;
+ text-transform: uppercase;
+ text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+ }
+
+ .qr-code {
+ max-width: 300px;
+ width: 100%;
+ height: auto;
+ margin: 0 auto;
+ border-radius: 10px;
+ border: 2px solid rgba(0, 191, 255, 0.5);
+ box-shadow: 0 0 30px rgba(0, 191, 255, 0.3);
+ }
+
+ .qr-text {
+ font-size: 0.95rem;
+ color: #ddd;
+ margin-top: 15px;
+ line-height: 1.5;
+ }
+
+ @media (max-width: 768px) {
+ .features {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ }
+ </style>
+</head>
+<body>
+ <canvas id="matrix-bg"></canvas>
+ 
+ <div class="content">
+ <div class="container">
+ 
+ <div class="header">
+ <div style="font-size: clamp(1rem, 2vw, 1.3rem); color: #00BFFF; margin-bottom: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.1em;">Greg Sain Presents...</div>
+ <div class="logo">SHIFT<span style="color: #00FFFF;">AI</span></div>
+ <div class="tagline">Creative Tools That Pay You</div>
+ <div class="subtagline">Studio + Founders Club Access</div>
+ </div>
+
+ <div class="card">
+ <!-- VIDEO EMBED -->
+ <div class="video-container" style="padding: 56.25% 0 0 0; position: relative;">
+ <iframe src="https://player.vimeo.com/video/1235856062?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="SHIFTAI GREG SAIN PAGE"></iframe>
+ </div>
+ 
+ <div class="features">
+ <a href="https://go.shiftai.club/gregsain" style="text-decoration: none; color: inherit;">
+ <div class="feature">
+ <div class="feature-icon">🎬</div>
+ <div class="feature-text">Video Generation</div>
+ </div>
+ </a>
+ <a href="https://go.shiftai.club/gregsain" style="text-decoration: none; color: inherit;">
+ <div class="feature">
+ <div class="feature-icon">🎙️</div>
+ <div class="feature-text">Voice Cloning</div>
+ </div>
+ </a>
+ <a href="https://go.shiftai.club/gregsain" style="text-decoration: none; color: inherit;">
+ <div class="feature">
+ <div class="feature-icon">🎵</div>
+ <div class="feature-text">Music Creation</div>
+ </div>
+ </a>
+ <a href="https://go.shiftai.club/gregsain" style="text-decoration: none; color: inherit;">
+ <div class="feature">
+ <div class="feature-icon">🌍</div>
+ <div class="feature-text">Translation & Dubbing</div>
+ </div>
+ </a>
+ <a href="https://go.shiftai.club/gregsain" style="text-decoration: none; color: inherit;">
+ <div class="feature">
+ <div class="feature-icon">💰</div>
+ <div class="feature-text">Share & Earn</div>
+ </div>
+ </a>
+ <a href="https://go.shiftai.club/gregsain" style="text-decoration: none; color: inherit;">
+ <div class="feature">
+ <div class="feature-icon">👥</div>
+ <div class="feature-text">Founders Community</div>
+ </div>
+ </a>
+ </div>
+
+ <div style="text-align: center; margin: 25px 0;">
+ <img src="launch-banner.jpg" alt="ShiftAI Launch" style="width: 100%; max-width: 800px; border-radius: 12px; border: 2px solid rgba(0, 191, 255, 0.5); box-shadow: 0 0 40px rgba(0, 191, 255, 0.4);" />
+ </div>
+
+ <div class="qr-section">
+ <div class="qr-title">🔗 Scan to Join</div>
+ <img src="shiftai-qr.jpg?v=2" alt="ShiftAI QR Code" class="qr-code" style="display: block;" />
+ <div class="qr-text">Scan with your phone to access The Founders Club portal instantly</div>
+ </div>
+
+ <div class="cta-section">
+ <div class="cta-headline">Get Full Access Now</div>
+ 
+ <form id="leadForm">
+ <div class="form-group">
+ <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+ </div>
+ <div class="form-group">
+ <input type="email" id="email" name="email" placeholder="Email Address" required>
+ </div>
+ <button type="submit" class="submit-btn">Get Exclusive Access</button>
+ </form>
+
+ <div class="success-message" id="successMessage">
+ <div class="success-title">🎉 Welcome to The Founders Club!</div>
+ <div class="success-text">Check your email for your exclusive access link. See you in Las Vegas!</div>
+ </div>
+ </div>
+ 
+ </div>
+
+ </div>
+ </div>
+
+ <script>
+ // Matrix background effect
+ const canvas = document.getElementById('matrix-bg');
+ const ctx = canvas.getContext('2d');
+
+ canvas.width = window.innerWidth;
+ canvas.height = window.innerHeight;
+
+ const letters = 'SHIFTAI01';
+ const fontSize = 14;
+ const columns = canvas.width / fontSize;
+ const drops = [];
+
+ for (let i = 0; i < columns; i++) {
+ drops[i] = 1;
+ }
+
+ function drawMatrix() {
+ ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+ ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+ const colors = ['#00BFFF', '#00D9FF', '#0088CC'];
+ ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+ ctx.font = fontSize + 'px monospace';
+
+ for (let i = 0; i < drops.length; i++) {
+ const text = letters[Math.floor(Math.random() * letters.length)];
+ ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+ if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+ drops[i] = 0;
+ }
+ drops[i]++;
+ }
+ }
+
+ setInterval(drawMatrix, 35);
+
+ window.addEventListener('resize', () => {
+ canvas.width = window.innerWidth;
+ canvas.height = window.innerHeight;
+ });
+
+ // Form submission
+ document.getElementById('leadForm').addEventListener('submit', async function(e) {
+ e.preventDefault();
+ 
+ const firstName = document.getElementById('firstName').value;
+ const email = document.getElementById('email').value;
+ 
+ try {
+ const response = await fetch('/api/shiftai-lead', {
+ method: 'POST',
+ headers: {
+ 'Content-Type': 'application/json',
+ },
+ body: JSON.stringify({
+ firstName: firstName,
+ email: email,
+ timestamp: new Date().toISOString()
+ })
+ });
+
+ if (response.ok) {
+ document.getElementById('leadForm').style.display = 'none';
+ document.getElementById('successMessage').classList.add('show');
+ }
+ } catch (error) {
+ console.error('Error:', error);
+ alert('Something went wrong. Please try again.');
+ }
+ });
+ </script>
+</body>
+</html>

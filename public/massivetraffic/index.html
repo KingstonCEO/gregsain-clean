@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASSIVE TRAFFIC BLUEPRINT - Download</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 255, 65, 0.03) 2px,
+                    rgba(0, 255, 65, 0.03) 4px
+                );
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: #00ff41;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(0, 255, 65, 0.8);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .hook {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 50px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        
+        .download-box {
+            background: rgba(0, 255, 65, 0.1);
+            border: 3px solid #00ff41;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 0 40px rgba(0, 255, 65, 0.4);
+        }
+        
+        .download-box h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ff41;
+            font-size: 24px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #00ff41;
+            color: #000;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            padding: 20px 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #00cc34;
+            box-shadow: 0 0 50px rgba(0, 255, 65, 1);
+            transform: scale(1.05);
+        }
+        
+        .what-inside {
+            text-align: left;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(0, 255, 65, 0.05);
+            border-left: 4px solid #00ff41;
+        }
+        
+        .what-inside h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ff41;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .what-inside ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .what-inside li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+            color: #ddd;
+            font-size: 16px;
+        }
+        
+        .what-inside li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #00ff41;
+        }
+        
+        .cta-links {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(0, 255, 65, 0.3);
+        }
+        
+        .cta-links h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ff41;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-links a {
+            display: block;
+            color: #00ff41;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 15px 0;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .cta-links a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+        }
+        
+        .footer {
+            margin-top: 60px;
+            font-size: 14px;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            .subtitle {
+                font-size: 18px;
+            }
+            .download-btn {
+                font-size: 16px;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MASSIVE<br>TRAFFIC<br>BLUEPRINT</h1>
+        <div class="subtitle">Stop Begging For Traffic. Build The Machine.</div>
+        
+        <div class="hook">
+            Most people don't have an offer problem.<br>
+            They have a traffic problem.<br>
+            And traffic problems are solved with machines.
+        </div>
+        
+        <div class="download-box">
+            <h2>Download Your Free Blueprint</h2>
+            <a href="/massive-traffic-blueprint.pdf" class="download-btn" download>
+                ⬇ DOWNLOAD PDF
+            </a>
+        </div>
+        
+        <div class="what-inside">
+            <h3>What's Inside:</h3>
+            <ul>
+                <li>The 5-Part Traffic Machine Framework</li>
+                <li>Daily 60-Minute Traffic Routine</li>
+                <li>Hook Bank That Stops The Scroll</li>
+                <li>Comment Traffic Strategy</li>
+                <li>Capture Point Blueprint</li>
+                <li>Test, Track & Scale System</li>
+                <li>The Big Mistakes To Avoid</li>
+            </ul>
+        </div>
+        
+        <div class="cta-links">
+            <h3>Want the machine built for your offer?</h3>
+            <a href="https://anyoffertrafficmachine.com" target="_blank">anyoffertrafficmachine.com →</a>
+            
+            <h3 style="margin-top: 40px;">More from Greg "G" Sain:</h3>
+            <a href="https://gregsain.com" target="_blank">gregsain.com →</a>
+        </div>
+        
+        <div class="footer">
+            Traffic is the problem. Machines beat manual hustle.
+        </div>
+    </div>
+</body>
+</html>
