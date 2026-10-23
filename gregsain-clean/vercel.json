@@ -1,0 +1,78 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "upgrade-insecure-requests"
+        }
+      ]
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/traffic-sequence",
+      "schedule": "0 14 * * *"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/zoom",
+      "destination": "https://us02web.zoom.us/j/5311473978?pwd=bnVGQ1E5cUh3TitGT3oxZU9ITG93dz09",
+      "permanent": false
+    },
+    {
+      "source": "/calendar",
+      "destination": "http://tidycal.com/tka",
+      "permanent": false
+    },
+    {
+      "source": "/fb",
+      "destination": "https://facebook.com/openclawqanda",
+      "permanent": false
+    },
+    {
+      "source": "/openclaw-system",
+      "destination": "https://openclaw-guide-landing-page.vercel.app/sales-page.html",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/trending",
+      "destination": "https://aitrendtraffic.com",
+      "permanent": false
+    },
+    {
+      "source": "/recommends/arbitragetruth",
+      "destination": "https://aiarbitragetruth.com",
+      "permanent": false
+    },
+    {
+      "source": "/xabclubcalc",
+      "destination": "https://xab-compound-calc.vercel.app",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/recommends/xabclub",
+      "destination": "https://xabclub-landing.vercel.app"
+    },
+    {
+      "source": "/openclaw-ebook",
+      "destination": "/openclaw-ebook.html"
+    },
+    {
+      "source": "/openclaw-quickstart",
+      "destination": "https://openclaw-guide-landing-page.vercel.app/sales-page.html"
+    },
+    {
+      "source": "/oc-guidebook",
+      "destination": "https://openclaw-guide-landing-page.vercel.app/"
+    },
+    {
+      "source": "/leads",
+      "destination": "/leads.html"
+    }
+  ]
+}
